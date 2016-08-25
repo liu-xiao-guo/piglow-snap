@@ -1,0 +1,15 @@
+name: piglow-snappy
+version: "1.0"
+summary: Piglow API for controlling the piglow lights
+description: This is the webserver API to control the piglow. The piglow can be controlled by install "piglow" on ubuntu phone
+
+mysql:
+  command: bin/piglow
+  daemon: simple
+  plugs: [network, network-bind]
+
+parts:
+  piglow:
+    plugin: go
+    source: ./src/piglow
+
